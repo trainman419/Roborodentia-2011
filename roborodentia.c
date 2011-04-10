@@ -80,6 +80,7 @@ int main(void)
    print_string("Hello Mouse");
 
    while(1) {
+      tbi(PORTA, 4); // toggle LED
       m1 = mouse_read(0);
       m2 = mouse_read(1);
       //m1.x = ((int16_t)knob()) - 128;
