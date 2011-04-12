@@ -10,7 +10,7 @@ LIB = polybot_library
 
 # these are PolyBot Library source files that your program needs
 SRC = $(LIB)/delays.c $(LIB)/adc.c $(LIB)/lcd.c $(LIB)/utility.c \
-		$(LIB)/servo.c serial.c mouse.c
+		$(LIB)/servo.c  $(LIB)/motor.c serial.c mouse.c
 
 # this runs the program target below
 all: $(TRG).hex
@@ -26,8 +26,8 @@ $(TRG).hex: $(TRG).c $(SRC) $(ASM)
 program: $(TRG).hex
 
 #Linux command
-	avrdude -pm32 -P/dev/ttyUSB0 -cbutterfly -b57600 -u -U flash:w:$(TRG).hex
-#	avrdude -pm32 -P/dev/tty.usbserial-A30008vu -cbutterfly -b57600 -u -U flash:w:$(TRG).hex
+#	avrdude -pm32 -P/dev/ttyUSB0 -cbutterfly -b57600 -u -U flash:w:$(TRG).hex
+	avrdude -pm32 -P/dev/tty.usbserial-A30008vu -cbutterfly -b57600 -u -U flash:w:$(TRG).hex -F
 
 #Windows command
 #	avrdude -pm32 -P$(PORT) -cbutterfly -b57600 -u -U flash:w:$(TRG).hex

@@ -9,7 +9,7 @@
 // By default, all motors are enabled.  If NUM_ACTIVE_MOTORS is set to 3,
 // then motors 0-2 are enabled.  Reducing this number reduces the 
 // amount of time spent in the interrupt routine.
-#define NUM_ACTIVE_MOTORS 2
+#define NUM_ACTIVE_MOTORS 4
 
 #define PWM_FREQUENCY 500  //frequency in Hertz for the motor PWM
 #define PWM_PERIOD_CYCLES 16000000/PWM_FREQUENCY/8 //prescalar is 8 
